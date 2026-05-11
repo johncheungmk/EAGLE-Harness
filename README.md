@@ -1,24 +1,41 @@
-# EAGLE Harness GitHub Site
+# EAGLE Harness
 
-**EAGLE** = Evidence-Aware Governed Lifecycle Engine for Trustworthy Knowledge-Intensive LLM Agents.
+**EAGLE** = **Evidence-Aware Governed Lifecycle Engine** for trustworthy knowledge-intensive LLM agents.
 
-This repository contains a ready-to-host GitHub Pages site plus a runnable Python prototype.
+EAGLE reframes an LLM agent harness as a governance-centric runtime for institutional knowledge work. The project includes a GitHub Pages site, a runnable Python/Streamlit prototype, and preliminary IT helpdesk chatbot evaluation materials.
 
-## Why host this on GitHub Pages?
+## Project website
 
-GitHub Pages is suitable because it can publish static project documentation directly from a repository branch or via GitHub Actions. The official GitHub documentation states that Pages can publish when changes are pushed to a branch, and the source can be either the repository root or the `/docs` folder.
+GitHub Pages site:
 
-## Repository structure
+```text
+https://johncheungmk.github.io/EAGLE-Harness/
+```
+
+Main repository:
+
+```text
+https://github.com/johncheungmk/EAGLE-Harness
+```
+
+## What is included
 
 ```text
 .
 ├── index.html
 ├── architecture.html
 ├── experiment.html
+├── dry-run-results.html
+├── human-review-results.html
 ├── prototype.html
 ├── paper.html
+├── progress.html
 ├── docs/
-│   └── implementation-guide.html
+│   ├── human_review_completed_combined_2reviewers.csv
+│   ├── human_review_summary_by_mode_2reviewers.csv
+│   ├── human_review_summary_by_mode_2reviewers_normalized.csv
+│   ├── human_review_interrater_check.csv
+│   └── evaluation_summary3.csv
 ├── assets/
 │   ├── css/style.css
 │   └── js/main.js
@@ -28,51 +45,83 @@ GitHub Pages is suitable because it can publish static project documentation dir
 │   ├── requirements.txt
 │   ├── data/
 │   └── eagle/
-└── .github/workflows/pages.yml
+└── LICENSE
 ```
 
-## Option A: Deploy from branch
+## Main features
 
-1. Create a new GitHub repository, for example `eagle-harness`.
-2. Upload all files in this package to the repository root.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch `main` and folder `/root`.
-6. Save.
+- Evidence-aware retrieval and ranking
+- Authority and freshness-aware evidence scoring
+- Evidence graph logging
+- Policy and risk decision layer
+- Risk-aware action handling
+- Standard RAG, Agentic RAG, and EAGLE comparison modes
+- Preliminary human review results for an IT helpdesk chatbot prototype
 
-Your site will be available at:
+## Human review results
+
+The project includes a preliminary two-reviewer human evaluation of the IT helpdesk chatbot prototype.
+
+The evaluation covers:
+
+- 45 IT helpdesk questions
+- 3 systems: Standard RAG, Agentic RAG, and EAGLE Harness
+- 135 generated answers
+- 2 reviewers
+- 270 answer-level reviews
+
+Result page:
 
 ```text
-https://YOUR-USERNAME.github.io/eagle-harness/
+human-review-results.html
 ```
 
-## Option B: Deploy using GitHub Actions
-
-This package includes:
+Downloadable CSV files are stored in:
 
 ```text
-.github/workflows/pages.yml
+docs/
 ```
-
-To use it:
-
-1. Push the repository to GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **GitHub Actions**.
-4. Push to `main` or manually run the workflow.
 
 ## Run the prototype locally
 
 ```bash
 cd prototype
 python -m venv .venv
-source .venv/bin/activate     # Windows: .venv\Scripts\activate
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
+macOS/Linux:
+
+```bash
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## Run evaluation
+
+```bash
+cd prototype
+python run_evaluation.py
+```
+
 ## Important publishing warning
 
-Do not upload private institutional documents, personal data, student data, HR records, salary records, unpublished policies, API keys, `.env` files, or confidential evaluation logs to a public GitHub repository.
+Do **not** upload private institutional documents, personal data, student data, HR records, salary records, unpublished policies, API keys, `.env` files, or confidential evaluation logs to a public GitHub repository.
 
-Use anonymised, public, or synthetic datasets for the public site.
+Use only anonymised, public, or synthetic datasets for the public site.
+
+## Current status
+
+This repository is a research prototype. The current evaluation should be interpreted as a preliminary prototype and human-review study, not a full production validation. Future work should include stronger retrieval baselines, claim-level verification, red-team testing, latency/cost measurement, and policy-engine integration.
+
+## License
+
+This project is released under the MIT License.
