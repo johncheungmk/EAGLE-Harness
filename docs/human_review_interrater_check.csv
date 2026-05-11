@@ -1,0 +1,7 @@
+﻿metric,mean_abs_diff,exact_agreement_rate
+correctness_1_to_5,0.0,1.0
+groundedness_1_to_5,0.37037037037037035,0.7333333333333333
+citation_precision_1_to_5,0.0,1.0
+completeness_1_to_5,0.0,1.0
+usefulness_1_to_5,0.022222222222222223,0.9777777777777777
+risk_handling_1_to_5,0.08888888888888889,0.9185185185185185
