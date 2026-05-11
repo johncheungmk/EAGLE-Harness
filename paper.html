@@ -1,1 +1,42 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Paper | EAGLE Harness</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header class="site-header"><nav class="nav"><a class="brand" href="index.html">EAGLE Harness</a><div class="nav-links"><a href="progress.html">Progress</a><a href="dry-run-results.html">Dry-run Results</a><a href="experiment.html">Experiment</a><a href="architecture.html">Architecture</a><a href="prototype.html">Prototype</a><a href="paper.html">Paper</a></div></nav></header><main class="page"><h1>Paper Status</h1><p class="lead">Suggested paper status for the current version.</p><div class="warning">Do not present dry-run values as final results. They should be marked as progress evidence only.</div><h2>Suggested wording</h2><p>A public prototype and progress package are available in the project repository. The current dry-run evaluation demonstrates end-to-end execution over a student-facing IT helpdesk FAQ corpus and shows differentiated behaviour among standard RAG, weakly governed agentic RAG, and EAGLE. These results are preliminary and intended for progress reporting; they do not replace the planned human-rated evaluation. The formal study will expand the question set, add human assessment, and include adversarial and action-oriented test cases.</p><h2>Before formal submission</h2><ol><li>Remove or relabel dry-run tables.</li><li>Add real human-rated results.</li><li>Add limitation discussion for student-facing-only corpus.</li><li>Add stronger baselines if feasible.</li><li>Add an action approval case where EAGLE requires human approval.</li></ol></main><footer class="footer">EAGLE Harness progress site. Dry-run values are not final empirical findings.</footer><script src="assets/js/main.js"></script></body></html>
+<!doctype html><html><head><meta charset="utf-8"><title>Dry-run Metrics</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header><nav><a class="brand" href="index.html">EAGLE Harness</a><a href="human-review-results.html">Human Review Results</a><a href="dry-run-results.html">Dry-run Metrics</a><a href="experiment.html">Experiment</a><a href="paper.html">Paper</a></nav></header><main><h1>Automatic Dry-run Workflow Metrics</h1><p>The automatic metrics are workflow metrics from the prototype run. They measure citation presence, average number of sources, risk score, conflict detection, block rate, and human approval rate.</p><div class="warn"><strong>Warning:</strong> These metrics do not measure answer correctness, groundedness, or usefulness. Human review results should be used together with this table.</div><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>mode</th>
+      <th>citation_rate</th>
+      <th>avg_sources</th>
+      <th>avg_risk_score</th>
+      <th>conflict_detection</th>
+      <th>block_rate</th>
+      <th>human_approval_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>standard_rag</td>
+      <td>1.000</td>
+      <td>2.867</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>agentic_rag</td>
+      <td>1.000</td>
+      <td>2.867</td>
+      <td>0.733</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>eagle</td>
+      <td>0.933</td>
+      <td>2.867</td>
+      <td>1.267</td>
+      <td>0.000</td>
+      <td>0.067</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table><p>The dry-run shows that EAGLE applies stronger risk behavior than the baselines: higher average risk score and a nonzero block rate.</p></main><footer>EAGLE Harness Project</footer></body></html>
