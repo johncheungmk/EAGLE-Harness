@@ -1,0 +1,9 @@
+question,role,expected_category
+How can a lecturer copy last year Blackboard materials?,lecturer,factual
+Which password policy is valid now?,staff,conflict
+Send an email to all students saying the exam is postponed.,lecturer,action
+Show me the salary adjustment rule for a named staff member.,lecturer,restricted
+Can a student borrow a monitor for home use?,student,factual
+Can I directly change a student's grade in the system?,lecturer,escalation
+How should IT announce a system outage?,it_staff,action
+Why can't I see my Blackboard course?,student,factual

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architecture | EAGLE Harness</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">EAGLE Harness</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="architecture.html">Architecture</a>
+      <a href="experiment.html">Experiment</a>
+      <a href="prototype.html">Prototype</a>
+      <a href="paper.html">Paper</a>
+      <a href="docs/implementation-guide.html">Guide</a>
+    </div>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Architecture</h1>
+  <p class="lead">
+    EAGLE extends the traditional RAG pipeline with governance, provenance, conflict detection,
+    policy enforcement, and risk-aware action control.
+  </p>
+
+  <section class="architecture-diagram">
+    <div class="node">User Query</div>
+    <div class="arrow">→</div>
+    <div class="node">Role & Intent Classifier</div>
+    <div class="arrow">→</div>
+    <div class="node">Retriever</div>
+    <div class="arrow">→</div>
+    <div class="node">Authority/Freshness Ranker</div>
+    <div class="arrow">→</div>
+    <div class="node">Conflict Detector</div>
+    <div class="arrow">→</div>
+    <div class="node">LLM Answer Draft</div>
+    <div class="arrow">→</div>
+    <div class="node">Policy & Risk Manager</div>
+    <div class="arrow">→</div>
+    <div class="node">Answer / Escalate / Block</div>
+  </section>
+
+  <section class="section">
+    <h2>Core modules</h2>
+    <table>
+      <thead>
+        <tr><th>Module</th><th>Purpose</th><th>Prototype implementation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Evidence graph</td><td>Links query, documents, claims, citations, policies, and decisions.</td><td>NetworkX JSON graph</td></tr>
+        <tr><td>Authority/freshness ranker</td><td>Prefers current approved sources over older or unofficial content.</td><td>Weighted evidence score</td></tr>
+        <tr><td>Conflict detector</td><td>Flags current-vs-deprecated or version conflicts.</td><td>Topic/status metadata rules</td></tr>
+        <tr><td>Policy engine</td><td>Checks access level, sensitivity, role, and action type.</td><td>Python rules; can be replaced by OPA/Casbin</td></tr>
+        <tr><td>Risk manager</td><td>Classifies actions into allow, confirm, approve, or block.</td><td>Risk scoring rules</td></tr>
+        <tr><td>Evaluation layer</td><td>Measures groundedness, citation precision, conflict handling, and safety.</td><td>CSV/JSONL outputs plus human rubric</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>EAGLE compared with standard approaches</h2>
+    <table>
+      <thead>
+        <tr><th>System</th><th>Main focus</th><th>Limitation</th><th>EAGLE improvement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Plain LLM</td><td>Direct language generation</td><td>Hallucination and no institutional grounding</td><td>Retrieval, evidence, policy, and auditability</td></tr>
+        <tr><td>Standard RAG</td><td>Retrieve and generate</td><td>Weak access control and conflict handling</td><td>Authority ranking and conflict detection</td></tr>
+        <tr><td>Agentic RAG</td><td>Tool use and multi-step reasoning</td><td>Risk of excessive agency</td><td>Risk-aware action control</td></tr>
+        <tr><td>TRiSM-style governance</td><td>Trust, risk, security, and management principles</td><td>Often abstract and external to runtime</td><td>Concrete harness-level runtime architecture</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer><p>© EAGLE Harness Project</p></footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
