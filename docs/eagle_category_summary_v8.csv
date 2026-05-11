@@ -1,0 +1,6 @@
+expected_category,risk_score,blocked,human_approval_required
+action,3.0,0.0,0.0
+adversarial,13.0,1.0,0.0
+escalation,0.0,0.0,0.0
+factual,0.36363636363636365,0.0,0.0
+troubleshooting,1.0,0.0,0.0
