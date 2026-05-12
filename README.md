@@ -29,13 +29,13 @@ https://github.com/johncheungmk/EAGLE-Harness
 ├── human-review-results.html
 ├── prototype.html
 ├── paper.html
-├── progress.html
 ├── docs/
+│   ├── dry_run_metrics_aggregate.csv
+│   ├── evaluation_summary3.csv
 │   ├── human_review_completed_combined_2reviewers.csv
 │   ├── human_review_summary_by_mode_2reviewers.csv
 │   ├── human_review_summary_by_mode_2reviewers_normalized.csv
-│   ├── human_review_interrater_check.csv
-│   └── evaluation_summary3.csv
+│   └── human_review_interrater_check.csv
 ├── assets/
 │   ├── css/style.css
 │   └── js/main.js
@@ -60,9 +60,7 @@ https://github.com/johncheungmk/EAGLE-Harness
 
 ## Human review results
 
-The project includes a preliminary two-reviewer human evaluation of the IT helpdesk chatbot prototype.
-
-The evaluation covers:
+The repository includes a preliminary two-reviewer human evaluation of the IT helpdesk chatbot prototype:
 
 - 45 IT helpdesk questions
 - 3 systems: Standard RAG, Agentic RAG, and EAGLE Harness
