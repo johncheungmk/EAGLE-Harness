@@ -1,7 +1,143 @@
-﻿metric,mean_abs_diff,exact_agreement_rate
-correctness_1_to_5,0.0,1.0
-groundedness_1_to_5,0.37037037037037035,0.7333333333333333
-citation_precision_1_to_5,0.0,1.0
-completeness_1_to_5,0.0,1.0
-usefulness_1_to_5,0.022222222222222223,0.9777777777777777
-risk_handling_1_to_5,0.08888888888888889,0.9185185185185185
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EAGLE Harness | Evidence-Aware Governance for Institutional LLM Agents</title>
+  <meta name="description" content="EAGLE Harness is an evidence-aware governed lifecycle engine for trustworthy institutional LLM agents.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">EAGLE Harness</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="architecture.html">Architecture</a>
+      <a href="experiment.html">Experiment</a>
+      <a href="prototype.html">Prototype</a>
+      <a href="human-review-results.html">Human Review Results</a>
+      <a href="dry-run-results.html">Dry-run Metrics</a>
+      <a href="paper.html">Paper</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Technical Note / Research Prototype</p>
+      <h1>EAGLE Harness</h1>
+      <h2>Evidence-Aware Governed Lifecycle Engine for Institutional LLM Agents</h2>
+      <p>
+        EAGLE reframes the LLM agent harness as a governance-centric runtime for institutional knowledge work.
+        It combines evidence-aware retrieval, authority/freshness ranking, evidence graph logging, policy/risk
+        decisions, and risk-aware action handling.
+      </p>
+      <div class="button-row">
+        <a class="button primary" href="human-review-results.html">View human-review results</a>
+        <a class="button" href="prototype.html">Run the prototype</a>
+        <a class="button" href="paper.html">Paper information</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Current evaluation</h3>
+      <ul>
+        <li>45 student-facing IT helpdesk questions</li>
+        <li>3 systems: Standard RAG, Agentic RAG, and EAGLE</li>
+        <li>135 generated answers</li>
+        <li>2 human reviewers</li>
+        <li>270 answer-level reviews</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h3>Governance-centric harness</h3>
+      <p>
+        EAGLE adds policy decisions, risk handling, and evidence logging to the normal RAG/agent workflow.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Evidence-aware retrieval</h3>
+      <p>
+        Retrieval uses relevance plus authority, freshness, and document-status metadata to reduce outdated or
+        inappropriate evidence.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Prototype evaluation</h3>
+      <p>
+        Preliminary human review suggests that EAGLE performs best among the three tested modes in this limited
+        IT helpdesk pilot.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <h2>Human-review summary</h2>
+    <p>
+      Scores are normalized to 0–1 from the original 1–5 human rating scale.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>System</th>
+          <th>Correctness</th>
+          <th>Groundedness</th>
+          <th>Citation precision</th>
+          <th>Completeness</th>
+          <th>Usefulness</th>
+          <th>Risk handling</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Standard RAG</td>
+          <td>0.787</td>
+          <td>0.916</td>
+          <td>0.831</td>
+          <td>0.778</td>
+          <td>0.780</td>
+          <td>0.920</td>
+        </tr>
+        <tr>
+          <td>Agentic RAG</td>
+          <td>0.804</td>
+          <td>0.916</td>
+          <td>0.831</td>
+          <td>0.778</td>
+          <td>0.767</td>
+          <td>0.924</td>
+        </tr>
+        <tr>
+          <td><strong>EAGLE Harness</strong></td>
+          <td><strong>0.844</strong></td>
+          <td><strong>0.938</strong></td>
+          <td><strong>0.871</strong></td>
+          <td><strong>0.831</strong></td>
+          <td><strong>0.820</strong></td>
+          <td><strong>0.951</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section callout">
+    <h2>Interpretation note</h2>
+    <p>
+      This site supports a Technical Note submission and should be interpreted as a preliminary prototype evaluation,
+      not as a production validation or a full benchmark against mature guardrail, GraphRAG, or enterprise RAG systems.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p>© EAGLE Harness Project. Preliminary research prototype.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
