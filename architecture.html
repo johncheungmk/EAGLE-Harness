@@ -1,1 +1,19 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Architecture | EAGLE Harness</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header class="site-header"><nav class="nav"><a class="brand" href="index.html">EAGLE Harness</a><div class="nav-links"><a href="progress.html">Progress</a><a href="dry-run-results.html">Dry-run Results</a><a href="experiment.html">Experiment</a><a href="architecture.html">Architecture</a><a href="prototype.html">Prototype</a><a href="paper.html">Paper</a></div></nav></header><main class="page"><h1>Architecture</h1><p class="lead">EAGLE adds a governed lifecycle layer around RAG and agentic workflows.</p><div class="grid"><div class="card"><h2>Evidence retrieval</h2><p>Indexes title, topic, and text. Retrieval is adjusted by authority, freshness, current/deprecated status, and topic match.</p></div><div class="card"><h2>Policy engine</h2><p>Detects action, restricted, and adversarial requests. Produces allow, confirmation_required, human_approval_required, or block decisions.</p></div><div class="card"><h2>Evidence graph</h2><p>Logs query, retrieved documents, answer, policy decision, conflict report, and supporting edges.</p></div></div><h2>Current modes</h2><table><thead><tr><th>Mode</th><th>Meaning</th></tr></thead><tbody><tr><td>standard_rag</td><td>Retrieval + answer generation only; no governance enforcement.</td></tr><tr><td>agentic_rag</td><td>Partial governance; high-risk outcomes are softened to confirmation_required.</td></tr><tr><td>eagle</td><td>Full policy/risk decision and evidence-aware governance.</td></tr></tbody></table></main><footer class="footer">EAGLE Harness progress site. Dry-run values are not final empirical findings.</footer><script src="assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Architecture | EAGLE Harness</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<body><header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">EAGLE Harness</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="architecture.html">Architecture</a>
+      <a href="experiment.html">Experiment</a>
+      <a href="prototype.html">Prototype</a>
+      <a href="human-review-results.html">Human Review Results</a>
+      <a href="dry-run-results.html">Dry-run Metrics</a>
+      <a href="paper.html">Paper</a>
+    </div>
+  </nav>
+</header><main class="page"><h1>Architecture</h1><p class="lead">EAGLE adds a governed lifecycle layer around RAG and agentic workflows.</p>
+<section class="grid"><article class="card"><h3>Evidence retrieval</h3><p>Indexes title, topic, and text. Retrieval is adjusted by authority, freshness, current/deprecated status, and topic match.</p></article><article class="card"><h3>Policy engine</h3><p>Detects action, restricted, and adversarial requests. Produces allow, confirmation_required, human_approval_required, or block decisions.</p></article><article class="card"><h3>Evidence graph</h3><p>Logs query, retrieved documents, answer, policy decision, conflict report, and supporting edges.</p></article></section>
+<section class="section"><h2>Current modes</h2><table><thead><tr><th>Mode</th><th>Meaning</th></tr></thead><tbody><tr><td>standard_rag</td><td>Retrieval + answer generation only; no governance enforcement.</td></tr><tr><td>agentic_rag</td><td>Partial governance; high-risk outcomes are softened to confirmation_required.</td></tr><tr><td>eagle</td><td>Full policy/risk decision and evidence-aware governance.</td></tr></tbody></table></section>
+</main><footer><p>© EAGLE Harness Project. Preliminary research prototype.</p></footer><script src="assets/js/main.js"></script></body></html>
